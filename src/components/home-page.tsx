@@ -11,17 +11,15 @@ import { UshaAppLogo } from "@/components/logo";
 type Product = { name: string; icon: IconName };
 type Service = { name: string; description: string, icon: IconName };
 type Contact = { address: string; phone: string; email: string };
-type Testimonial = { name: string; quote: string; rating: number };
 
 type HomePageProps = {
   imageUrl: string;
   products: Product[];
   services: Service[];
   contact: Contact;
-  testimonials: Testimonial[];
 };
 
-export function HomePage({ imageUrl, products, services, contact, testimonials }: HomePageProps) {
+export function HomePage({ imageUrl, products, services, contact }: HomePageProps) {
   const [showDetails, setShowDetails] = useState(false);
   const [showAboutUs, setShowAboutUs] = useState(false);
 
@@ -45,22 +43,18 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
             <p className="mt-4 text-lg md:text-xl font-body">
               Since 1960 | Wholesale & Retail
             </p>
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <Button onClick={() => setShowDetails(true)}>
-                Get Started
-              </Button>
-            </div>
           </div>
         </section>
 
         <div className="container mx-auto px-4 py-16 md:py-24 space-y-16">
-           {!showAboutUs && (
-            <div className="text-center">
+           <div className="text-center">
+              <Button onClick={() => setShowDetails(true)} className="mr-4">
+                Get Started
+              </Button>
               <Button variant="outline" onClick={() => setShowAboutUs(true)}>
                 Know More
               </Button>
             </div>
-           )}
 
            {showAboutUs && (
               <div className="py-4 space-y-16">
@@ -68,9 +62,9 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
                   Quality and Tradition Since 1960. We offer a wide range of houseware products and expert repair services to keep your cherished items in perfect condition.
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-16 items-start">
+                <div className="max-w-md mx-auto">
                   <div className="space-y-6">
-                    <h3 className="font-headline text-3xl">Contact Information</h3>
+                    <h3 className="font-headline text-3xl text-center">Contact Information</h3>
                     <div className="flex items-start gap-4">
                       <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                       <p>{contact.address}</p>
@@ -82,26 +76,6 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
                     <div className="flex items-center gap-4">
                       <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
                       <p>{contact.email}</p>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <h3 className="font-headline text-3xl">From Our Customers</h3>
-                    <div className="space-y-6">
-                      {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-background">
-                          <CardContent className="pt-6">
-                            <div className="flex mb-2">
-                              {Array(testimonial.rating)
-                                .fill(0)
-                                .map((_, i) => (
-                                  <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                                ))}
-                            </div>
-                            <blockquote className="italic">"{testimonial.quote}"</blockquote>
-                            <p className="text-right font-bold mt-2">- {testimonial.name}</p>
-                          </CardContent>
-                        </Card>
-                      ))}
                     </div>
                   </div>
                 </div>
