@@ -23,6 +23,7 @@ type HomePageProps = {
 
 export function HomePage({ imageUrl, products, services, contact, testimonials }: HomePageProps) {
   const [showDetails, setShowDetails] = useState(false);
+  const [showAboutUs, setShowAboutUs] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -39,7 +40,7 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
           <div className="absolute inset-0 bg-black bg-opacity-50" />
           <div className="relative z-10 text-center p-4">
             <h1 className="font-headline text-5xl md:text-7xl font-bold drop-shadow-lg">
-              Legacy Housewares
+              ushªOªpp
             </h1>
             <p className="mt-4 text-lg md:text-xl font-body">
               Since 1960 | Wholesale & Retail
@@ -53,49 +54,59 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
         </section>
 
         <div className="container mx-auto px-4 py-16 md:py-24 space-y-16">
-           <div className="py-4 space-y-16">
-              <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-center">
-                Quality and Tradition Since 1960. We offer a wide range of houseware products and expert repair services to keep your cherished items in perfect condition.
-              </p>
+           {!showAboutUs && (
+            <div className="text-center">
+              <Button variant="outline" onClick={() => setShowAboutUs(true)}>
+                Know More
+              </Button>
+            </div>
+           )}
 
-              <div className="grid md:grid-cols-2 gap-16 items-start">
-                <div className="space-y-6">
-                  <h3 className="font-headline text-3xl">Contact Information</h3>
-                  <div className="flex items-start gap-4">
-                    <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                    <p>{contact.address}</p>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Icon name="Phone" className="h-5 w-5 text-primary flex-shrink-0" />
-                    <p>{contact.phone}</p>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
-                    <p>{contact.email}</p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <h3 className="font-headline text-3xl">From Our Customers</h3>
+           {showAboutUs && (
+              <div className="py-4 space-y-16">
+                <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-center">
+                  Quality and Tradition Since 1960. We offer a wide range of houseware products and expert repair services to keep your cherished items in perfect condition.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-16 items-start">
                   <div className="space-y-6">
-                    {testimonials.map((testimonial, index) => (
-                      <Card key={index} className="bg-background">
-                        <CardContent className="pt-6">
-                          <div className="flex mb-2">
-                            {Array(testimonial.rating)
-                              .fill(0)
-                              .map((_, i) => (
-                                <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                              ))}
-                          </div>
-                          <blockquote className="italic">"{testimonial.quote}"</blockquote>
-                          <p className="text-right font-bold mt-2">- {testimonial.name}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
+                    <h3 className="font-headline text-3xl">Contact Information</h3>
+                    <div className="flex items-start gap-4">
+                      <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                      <p>{contact.address}</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <Icon name="Phone" className="h-5 w-5 text-primary flex-shrink-0" />
+                      <p>{contact.phone}</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
+                      <p>{contact.email}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <h3 className="font-headline text-3xl">From Our Customers</h3>
+                    <div className="space-y-6">
+                      {testimonials.map((testimonial, index) => (
+                        <Card key={index} className="bg-background">
+                          <CardContent className="pt-6">
+                            <div className="flex mb-2">
+                              {Array(testimonial.rating)
+                                .fill(0)
+                                .map((_, i) => (
+                                  <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                                ))}
+                            </div>
+                            <blockquote className="italic">"{testimonial.quote}"</blockquote>
+                            <p className="text-right font-bold mt-2">- {testimonial.name}</p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {showDetails && (
                 <div className="space-y-16 md:space-y-24">
@@ -103,7 +114,7 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
                         <Icon name="Bell" className="h-4 w-4" />
                         <AlertTitle>Special Announcement!</AlertTitle>
                         <AlertDescription>
-                            We now service all pressure cookers, LPG stoves, and mixers purchased from Legacy Housewares.
+                            We now service all pressure cookers, LPG stoves, and mixers purchased from ushªOªpp Housewares.
                         </AlertDescription>
                     </Alert>
 
@@ -153,7 +164,7 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
           <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label="UshaApp Website" className="logo-container">
             <UshaAppLogo />
           </a>
-          <p>&copy; {new Date().getFullYear()} Legacy Housewares. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ushªOªpp Housewares. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

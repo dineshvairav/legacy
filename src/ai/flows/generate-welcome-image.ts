@@ -34,8 +34,8 @@ const generateWelcomeImageFlow = ai.defineFlow(
     outputSchema: GenerateWelcomeImageOutputSchema,
   },
   async (input) => {
-    const prompt = `A relevant background image for the Legacy Housewares website, suggesting houseware in a vintage setting. ${
-      input.shouldAddLogo ? 'The Legacy Housewares logo is tastefully added to the image.' : ''
+    const prompt = `A relevant background image for the ushªOªpp Housewares website, suggesting houseware in a vintage setting. ${
+      input.shouldAddLogo ? 'The ushªOªpp Housewares logo is tastefully added to the image.' : ''
     }`;
 
     const {media} = await ai.generate({

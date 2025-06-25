@@ -26,9 +26,9 @@ export default async function Page() {
   ];
 
   const services: { name: string; description: string, icon: IconName }[] = [
-    { name: "Pressure Cookers", description: "Expert servicing for all brands.", icon: "Wrench" },
-    { name: "LPG Stoves", description: "Cleaning and repair services.", icon: "Wrench" },
-    { name: "Legacy Mixers", description: "Servicing for mixers purchased from us.", icon: "Wrench" },
+    { name: "Pressure Cookers", description: "Expert servicing for all brands from us.", icon: "Wrench" },
+    { name: "LPG Stoves", description: "Cleaning and repair services from us.", icon: "Wrench" },
+    { name: "Mixers", description: "Servicing for mixers purchased from us.", icon: "Wrench" },
   ];
 
   const contact = {

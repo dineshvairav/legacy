@@ -1,4 +1,4 @@
-# **App Name**: Legacy Housewares
+# **App Name**: ushªOªpp Housewares
 
 ## Core Features:
 
@@ -8,11 +8,11 @@
 - AI Background: Generate a relevant background image for the welcome page, suggesting houseware in a vintage setting; use a tool that can determine when or if to add the ushªOªpp Housewares logo tastefully to the generated images.
 - Business Type: Clearly state that the company does both wholesale and retail business.
 - Founding Year: Indicate the founding year of the business (since 1960).
-- Products and Services: List the product categories sold: kitchen items, presentation articles, brass, aluminum, stainless steel, cast iron, and small appliances (mixer, blender). Also, indicate which appliances the store services: pressure cookers, LPG stoves, mixers purchased from Legacy Housewares.
+- Products and Services: List the product categories sold: kitchen items, presentation articles, brass, aluminum, stainless steel, cast iron, and small appliances (mixer, blender). Also, indicate which appliances the store services: pressure cookers, LPG stoves, mixers purchased from ushªOªpp Housewares.
 
 ## Style Guidelines:
 
-- Primary color: Neon gray (#D4A373) to evoke a sense of legacy and quality. In dark mode: Dark gray (#333333).
+- Primary color: Neon gray (#D4A373) to evoke a sense of ushªOªpp and quality. In dark mode: Dark gray (#333333).
 - Background color: Very light, desaturated beige (#F5F5DC). In dark mode: Black (#000000).
 - Accent color: Neon blue.
 - Headline font: 'Playfair', serif with an elegant, fashionable, high-end feel.
