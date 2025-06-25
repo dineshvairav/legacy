@@ -14,7 +14,7 @@ import {z} from 'genkit';
 const GenerateWelcomeImageInputSchema = z.object({
   shouldAddLogo: z
     .boolean()
-    .describe('Whether or not to add the Legacy Housewares logo to the generated image.'),
+    .describe('Whether or not to add the ushªOªpp Housewares logo to the generated image.'),
 });
 export type GenerateWelcomeImageInput = z.infer<typeof GenerateWelcomeImageInputSchema>;
 

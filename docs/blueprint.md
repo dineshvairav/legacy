@@ -5,7 +5,7 @@
 - Welcome Page: Display a welcome page with a system-default dark/light mode toggle.
 - Contact and Testimonials: Provide a 'Know More' section with contact information (address, phone number, email) and customer testimonials.
 - Notifications: Implement a notification system for important announcements and updates.
-- AI Background: Generate a relevant background image for the welcome page, suggesting houseware in a vintage setting; use a tool that can determine when or if to add the Legacy Housewares logo tastefully to the generated images.
+- AI Background: Generate a relevant background image for the welcome page, suggesting houseware in a vintage setting; use a tool that can determine when or if to add the ushªOªpp Housewares logo tastefully to the generated images.
 - Business Type: Clearly state that the company does both wholesale and retail business.
 - Founding Year: Indicate the founding year of the business (since 1960).
 - Products and Services: List the product categories sold: kitchen items, presentation articles, brass, aluminum, stainless steel, cast iron, and small appliances (mixer, blender). Also, indicate which appliances the store services: pressure cookers, LPG stoves, mixers purchased from Legacy Housewares.
