@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -21,6 +22,8 @@ type HomePageProps = {
 };
 
 export function HomePage({ imageUrl, products, services, contact, testimonials }: HomePageProps) {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <div className="absolute top-4 right-4 z-50">
@@ -95,61 +98,61 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
                   </div>
                 </DialogContent>
               </Dialog>
-              <Button asChild>
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                  Get Started
-                </a>
+              <Button onClick={() => setShowDetails(true)}>
+                Get Started
               </Button>
             </div>
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-16 md:py-24 space-y-16 md:space-y-24">
-          <Alert>
-            <Icon name="Bell" className="h-4 w-4" />
-            <AlertTitle>Special Announcement!</AlertTitle>
-            <AlertDescription>
-              We now service all pressure cookers, LPG stoves, and mixers purchased from Legacy Housewares.
-            </AlertDescription>
-          </Alert>
+        {showDetails && (
+          <div className="container mx-auto px-4 py-16 md:py-24 space-y-16 md:space-y-24">
+            <Alert>
+              <Icon name="Bell" className="h-4 w-4" />
+              <AlertTitle>Special Announcement!</AlertTitle>
+              <AlertDescription>
+                We now service all pressure cookers, LPG stoves, and mixers purchased from Legacy Housewares.
+              </AlertDescription>
+            </Alert>
 
-          <section>
-            <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Products</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {products.map((product) => (
-                <Card key={product.name} className="text-center hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader>
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-                      <Icon name={product.icon} className="h-6 w-6 text-primary" />
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardTitle className="font-body font-semibold text-lg">{product.name}</CardTitle>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
+            <section>
+              <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Products</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {products.map((product) => (
+                  <Card key={product.name} className="text-center hover:shadow-lg transition-shadow duration-300">
+                    <CardHeader>
+                      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+                        <Icon name={product.icon} className="h-6 w-6 text-primary" />
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <CardTitle className="font-body font-semibold text-lg">{product.name}</CardTitle>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
 
-          <section>
-            <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {services.map((service) => (
-                <Card key={service.name} className="text-center hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader>
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-                      <Icon name={service.icon} className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="font-body font-semibold text-lg mt-4">{service.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-        </div>
+            <section>
+              <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {services.map((service) => (
+                  <Card key={service.name} className="text-center hover:shadow-lg transition-shadow duration-300">
+                    <CardHeader>
+                      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
+                        <Icon name={service.icon} className="h-6 w-6 text-primary" />
+                      </div>
+                      <CardTitle className="font-body font-semibold text-lg mt-4">{service.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          </div>
+        )}
       </main>
 
       <footer className="text-center p-6 bg-primary text-primary-foreground font-body">
