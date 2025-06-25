@@ -30,7 +30,6 @@ export async function generateWelcomeImage(input: GenerateWelcomeImageInput): Pr
 const generateWelcomeImagePrompt = ai.definePrompt({
   name: 'generateWelcomeImagePrompt',
   input: {schema: GenerateWelcomeImageInputSchema},
-  output: {schema: GenerateWelcomeImageOutputSchema},
   prompt: `Generate a relevant background image for the Legacy Housewares website, suggesting houseware in a vintage setting.  
 
   {{#if shouldAddLogo}}
@@ -49,11 +48,16 @@ const generateWelcomeImageFlow = ai.defineFlow(
     const {media} = await ai.generate({
       model: 'googleai/gemini-2.0-flash-preview-image-generation',
       prompt: generateWelcomeImagePrompt,
+      input: input,
       config: {
         responseModalities: ['TEXT', 'IMAGE'],
-        prompt: input,
       },
     });
-    return {imageUrl: media.url!};
+
+    if (!media?.url) {
+      throw new Error('Image generation failed to return an image.');
+    }
+
+    return {imageUrl: media.url};
   }
 );
