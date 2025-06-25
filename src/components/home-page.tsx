@@ -98,7 +98,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
                         <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Products</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                             {products.map((product) => (
-                            <Card key={product.name} className="text-center hover:shadow-lg transition-shadow duration-300">
+                            <Card key={product.name} className="text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:backdrop-blur-sm">
                                 <CardHeader>
                                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
                                     <Icon name={product.icon} className="h-6 w-6 text-primary" />
@@ -116,7 +116,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
                         <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {services.map((service) => (
-                            <Card key={service.name} className="text-center hover:shadow-lg transition-shadow duration-300">
+                            <Card key={service.name} className="text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:backdrop-blur-sm">
                                 <CardHeader>
                                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
                                     <Icon name={service.icon} className="h-6 w-6 text-primary" />
