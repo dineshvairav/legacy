@@ -14,7 +14,7 @@ import {z} from 'genkit';
 const GenerateWelcomeImageInputSchema = z.object({
   shouldAddLogo: z
     .boolean()
-    .describe('Whether or not to add the ushªOªpp Housewares logo to the generated image.'),
+    .describe('Whether or not to add the ushªOªpp logo to the generated image.'),
 });
 export type GenerateWelcomeImageInput = z.infer<typeof GenerateWelcomeImageInputSchema>;
 
@@ -35,7 +35,7 @@ const generateWelcomeImageFlow = ai.defineFlow(
   },
   async (input) => {
     const prompt = `A collection of modern, sleek stainless steel and black houseware products, including pots, pans, and small appliances. The items are arranged neatly on a reflective white surface against a minimalist, dark gray background. The lighting is bright and clean, creating a professional product photography look. ${
-      input.shouldAddLogo ? 'The ushªOªpp Housewares logo is tastefully added to the image.' : ''
+      input.shouldAddLogo ? 'The ushªOªpp logo is tastefully added to the image.' : ''
     }`;
 
     const {media} = await ai.generate({
