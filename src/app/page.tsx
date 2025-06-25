@@ -33,8 +33,8 @@ export default async function Page() {
 
   const contact = {
     address: "Usha Metals & Appliances, Fancy Bazaar, Changanacherry, 686101",
-    phone: "(123) 456-7890",
-    email: "contact@legacyhousewares.com",
+    phone: "(996) 129-58935",
+    email: "info@usha1960.trade",
   };
 
   return (

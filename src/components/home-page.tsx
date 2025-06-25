@@ -137,7 +137,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
 
       <footer className="text-center p-6 bg-primary text-primary-foreground font-body">
         <div className="container mx-auto flex flex-col items-center justify-center gap-4">
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label="UshaApp Website" className="logo-container">
+          <a href="https://shop.usha1960.trade/" target="_blank" rel="noopener noreferrer" aria-label="UshaApp Website" className="logo-container">
             <UshaAppLogo />
           </a>
           <p>&copy; {new Date().getFullYear()} ushªOªpp Housewares. All Rights Reserved.</p>
