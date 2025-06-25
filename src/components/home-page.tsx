@@ -69,15 +69,15 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
                     <h3 className="font-headline text-3xl text-center">Contact Information</h3>
                     <div className="flex items-start gap-4">
                       <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                      <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{contact.address}</a>
+                      <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground transition-colors">{contact.address}</a>
                     </div>
                     <div className="flex items-center gap-4">
                       <Icon name="Phone" className="h-5 w-5 text-primary flex-shrink-0" />
-                      <a href={`tel:${contact.phone}`} className="hover:underline">{contact.phone}</a>
+                      <a href={`tel:${contact.phone}`} className="hover:text-muted-foreground transition-colors">{contact.phone}</a>
                     </div>
                     <div className="flex items-center gap-4">
                       <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
-                      <a href={`mailto:${contact.email}`} className="hover:underline">{contact.email}</a>
+                      <a href={`mailto:${contact.email}`} className="hover:text-muted-foreground transition-colors">{contact.email}</a>
                     </div>
                   </div>
                 </div>
