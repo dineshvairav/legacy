@@ -51,10 +51,10 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
         <div className="container mx-auto px-4 py-16 md:py-24 space-y-16">
            <div className="text-center">
               <Button onClick={() => setShowDetails(true)} className="mr-4">
-                Get Started
+                Know More
               </Button>
               <Button variant="outline" onClick={() => setShowAboutUs(!showAboutUs)}>
-                Know More
+                Locate Us
               </Button>
             </div>
 
