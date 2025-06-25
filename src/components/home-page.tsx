@@ -26,8 +26,8 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex flex-col">
+        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4 sm:gap-0">
+          <div className="flex flex-col text-center sm:text-left">
             <h1 className="font-headline text-3xl font-bold text-foreground">
               ushªOªpp
             </h1>
@@ -39,9 +39,9 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
         </div>
       </header>
 
-      <main className="flex-grow pt-[74px]">
+      <main className="flex-grow pt-[136px] sm:pt-[80px]">
         <section
-          className="relative flex items-center justify-center h-[calc(100vh-74px)] bg-cover bg-center text-white"
+          className="relative flex items-center justify-center h-[calc(100vh-136px)] sm:h-[calc(100vh-80px)] bg-cover bg-center text-white"
           style={{ backgroundImage: `url(${imageUrl})` }}
           data-ai-hint="modern kitchenware"
         >
