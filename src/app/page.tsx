@@ -26,15 +26,15 @@ export default async function Page() {
   ];
 
   const services: { name: string; description: string, icon: IconName }[] = [
-    { name: "Pressure Cookers", description: "Expert servicing for all brands from us.", icon: "Wrench" },
-    { name: "LPG Stoves", description: "Cleaning and repair services from us.", icon: "Wrench" },
+    { name: "Pressure Cookers", description: "Servicing for all brands purchased from us.", icon: "Wrench" },
+    { name: "LPG Stoves", description: "Repair services purchased from us.", icon: "Wrench" },
     { name: "Mixers", description: "Servicing for mixers purchased from us.", icon: "Wrench" },
   ];
 
   const contact = {
     address: "Usha Metals & Appliances, Fancy Bazaar, Changanacherry, 686101",
-    phone: "(996) 129-58935",
-    email: "info@usha1960.trade",
+    phone: "(996) 129-5835",
+    email: "ushaagency1960@gmail.com",
   };
 
   return (
