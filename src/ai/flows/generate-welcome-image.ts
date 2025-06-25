@@ -34,7 +34,7 @@ const generateWelcomeImageFlow = ai.defineFlow(
     outputSchema: GenerateWelcomeImageOutputSchema,
   },
   async (input) => {
-    const prompt = `A relevant background image for the ushªOªpp Housewares website, suggesting houseware in a vintage setting. ${
+    const prompt = `A collection of modern, sleek stainless steel and black houseware products, including pots, pans, and small appliances. The items are arranged neatly on a reflective white surface against a minimalist, dark gray background. The lighting is bright and clean, creating a professional product photography look. ${
       input.shouldAddLogo ? 'The ushªOªpp Housewares logo is tastefully added to the image.' : ''
     }`;
 

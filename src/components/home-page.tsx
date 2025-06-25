@@ -32,18 +32,18 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
               ushªOªpp
             </h1>
             <p className="text-sm font-body text-muted-foreground tracking-wide">
-              Since 1960 | Wholesale & Retail
+              Since 1960 | Wholesale & Retail*
             </p>
           </div>
           <ThemeToggle />
         </div>
       </header>
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-[74px]">
         <section
-          className="relative flex items-center justify-center h-screen bg-cover bg-center text-white"
+          className="relative flex items-center justify-center h-[calc(100vh-74px)] bg-cover bg-center text-white"
           style={{ backgroundImage: `url(${imageUrl})` }}
-          data-ai-hint="vintage houseware"
+          data-ai-hint="modern kitchenware"
         >
           <div className="absolute inset-0 bg-black bg-opacity-50" />
         </section>
