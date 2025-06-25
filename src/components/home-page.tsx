@@ -25,9 +25,19 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <div className="absolute top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm shadow-sm">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex flex-col">
+            <h1 className="font-headline text-3xl font-bold text-foreground">
+              ushªOªpp
+            </h1>
+            <p className="text-sm font-body text-muted-foreground">
+              Since 1960 | Wholesale & Retail
+            </p>
+          </div>
+          <ThemeToggle />
+        </div>
+      </header>
 
       <main className="flex-grow">
         <section
@@ -36,14 +46,6 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
           data-ai-hint="vintage houseware"
         >
           <div className="absolute inset-0 bg-black bg-opacity-50" />
-          <div className="relative z-10 text-center p-4">
-            <h1 className="font-headline text-5xl md:text-7xl font-bold drop-shadow-lg">
-              ushªOªpp
-            </h1>
-            <p className="mt-4 text-lg md:text-xl font-body">
-              Since 1960 | Wholesale & Retail
-            </p>
-          </div>
         </section>
 
         <div className="container mx-auto px-4 py-16 md:py-24 space-y-16">
