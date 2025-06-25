@@ -87,3 +87,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.logo-group {
+  transition: filter 0.4s ease-in-out;
+}
+
+.logo-rect-hover {
+  display: none;
+}
+
+.logo-container:hover .logo-group {
+  filter: drop-shadow(0 0 4px #00d1ff) drop-shadow(0 0 8px #ff00f5);
+}
+
+.logo-container:hover .logo-rect-normal {
+  display: none;
+}
+
+.logo-container:hover .logo-rect-hover {
+  display: inline;
+}
