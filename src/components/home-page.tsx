@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Icon, IconName } from "@/components/icons";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { UshaAppLogo } from "@/components/logo";
 
 type Product = { name: string; icon: IconName };
 type Service = { name: string; description: string, icon: IconName };
@@ -156,7 +157,12 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
       </main>
 
       <footer className="text-center p-6 bg-primary text-primary-foreground font-body">
-        <p>&copy; {new Date().getFullYear()} Legacy Housewares. All Rights Reserved.</p>
+        <div className="container mx-auto flex flex-col items-center justify-center gap-4">
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label="UshaApp Website">
+            <UshaAppLogo />
+          </a>
+          <p>&copy; {new Date().getFullYear()} Legacy Housewares. All Rights Reserved.</p>
+        </div>
       </footer>
     </div>
   );
