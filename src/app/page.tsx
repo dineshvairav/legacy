@@ -32,7 +32,7 @@ export default async function Page() {
   ];
 
   const contact = {
-    address: "123 Heritage Lane, Tradition City, 45678",
+    address: "Usha Metals & Appliances, Fancy Bazaar, Changanacherry, 686101",
     phone: "(123) 456-7890",
     email: "contact@legacyhousewares.com",
   };

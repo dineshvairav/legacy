@@ -53,7 +53,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
               <Button onClick={() => setShowDetails(true)} className="mr-4">
                 Get Started
               </Button>
-              <Button variant="outline" onClick={() => setShowAboutUs(true)}>
+              <Button variant="outline" onClick={() => setShowAboutUs(!showAboutUs)}>
                 Know More
               </Button>
             </div>
@@ -69,15 +69,15 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
                     <h3 className="font-headline text-3xl text-center">Contact Information</h3>
                     <div className="flex items-start gap-4">
                       <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                      <p>{contact.address}</p>
+                      <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{contact.address}</a>
                     </div>
                     <div className="flex items-center gap-4">
                       <Icon name="Phone" className="h-5 w-5 text-primary flex-shrink-0" />
-                      <p>{contact.phone}</p>
+                      <a href={`tel:${contact.phone}`} className="hover:underline">{contact.phone}</a>
                     </div>
                     <div className="flex items-center gap-4">
                       <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
-                      <p>{contact.email}</p>
+                      <a href={`mailto:${contact.email}`} className="hover:underline">{contact.email}</a>
                     </div>
                   </div>
                 </div>
