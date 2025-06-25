@@ -22,7 +22,7 @@ export default async function Page() {
     { name: "Aluminum", icon: "Layers" },
     { name: "Stainless Steel", icon: "Sparkles" },
     { name: "Cast Iron", icon: "Container" },
-    { name: "Small Appliances", icon: "Blender" },
+    { name: "Small Appliances", icon: "Blend" },
   ];
 
   const services: { name: string; description: string, icon: IconName }[] = [
