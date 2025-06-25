@@ -1,11 +1,11 @@
-
 "use client";
 
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Icon, IconName } from "@/components/icons";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 type Product = { name: string; icon: IconName };
 type Service = { name: string; description: string, icon: IconName };
@@ -41,54 +41,58 @@ export function HomePage({ imageUrl, products, services, contact, testimonials }
             <p className="mt-4 text-lg md:text-xl font-body">
               Since 1960 | Wholesale & Retail
             </p>
-          </div>
-        </section>
-
-        <section id="about" className="bg-secondary text-secondary-foreground">
-            <div className="container mx-auto px-4 py-16 md:py-24 space-y-16">
-                <div className="text-center">
-                    <h2 className="font-headline text-4xl font-bold mb-4">About Us</h2>
-                    <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="mt-8" variant="secondary">Know More</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[825px] bg-secondary text-secondary-foreground">
+                <DialogHeader>
+                  <DialogTitle className="font-headline text-4xl font-bold my-4 text-center">About Us</DialogTitle>
+                </DialogHeader>
+                <div className="py-4 space-y-16">
+                    <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-center">
                         Quality and Tradition Since 1960. We offer a wide range of houseware products and expert repair services to keep your cherished items in perfect condition.
                     </p>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-16 items-start">
-                    <div className="space-y-6">
-                        <h3 className="font-headline text-3xl">Contact Information</h3>
-                        <div className="flex items-start gap-4">
-                            <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                            <p>{contact.address}</p>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <Icon name="Phone" className="h-5 w-5 text-primary flex-shrink-0" />
-                            <p>{contact.phone}</p>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
-                            <p>{contact.email}</p>
-                        </div>
-                    </div>
-                    <div className="space-y-6">
-                        <h3 className="font-headline text-3xl">From Our Customers</h3>
+                    <div className="grid md:grid-cols-2 gap-16 items-start">
                         <div className="space-y-6">
-                        {testimonials.map((testimonial, index) => (
-                            <Card key={index} className="bg-background">
-                            <CardContent className="pt-6">
-                                <div className="flex mb-2">
-                                {Array(testimonial.rating).fill(0).map((_, i) => (
-                                    <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                                ))}
-                                </div>
-                                <blockquote className="italic">"{testimonial.quote}"</blockquote>
-                                <p className="text-right font-bold mt-2">- {testimonial.name}</p>
-                            </CardContent>
-                            </Card>
-                        ))}
+                            <h3 className="font-headline text-3xl">Contact Information</h3>
+                            <div className="flex items-start gap-4">
+                                <Icon name="MapPin" className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                                <p>{contact.address}</p>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <Icon name="Phone" className="h-5 w-5 text-primary flex-shrink-0" />
+                                <p>{contact.phone}</p>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <Icon name="Mail" className="h-5 w-5 text-primary flex-shrink-0" />
+                                <p>{contact.email}</p>
+                            </div>
+                        </div>
+                        <div className="space-y-6">
+                            <h3 className="font-headline text-3xl">From Our Customers</h3>
+                            <div className="space-y-6">
+                            {testimonials.map((testimonial, index) => (
+                                <Card key={index} className="bg-background">
+                                <CardContent className="pt-6">
+                                    <div className="flex mb-2">
+                                    {Array(testimonial.rating).fill(0).map((_, i) => (
+                                        <Icon key={i} name="Star" className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                                    ))}
+                                    </div>
+                                    <blockquote className="italic">"{testimonial.quote}"</blockquote>
+                                    <p className="text-right font-bold mt-2">- {testimonial.name}</p>
+                                </CardContent>
+                                </Card>
+                            ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+              </DialogContent>
+            </Dialog>
+          </div>
         </section>
 
         <div className="container mx-auto px-4 py-16 md:py-24 space-y-16 md:space-y-24">
