@@ -31,7 +31,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
             <h1 className="font-headline text-3xl font-bold text-foreground">
               ushªOªpp
             </h1>
-            <p className="text-sm font-body text-muted-foreground">
+            <p className="text-sm font-body text-muted-foreground tracking-wide">
               Since 1960 | Wholesale & Retail
             </p>
           </div>
@@ -60,7 +60,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
 
            {showAboutUs && (
               <div className="py-4 space-y-16">
-                <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-center">
+                <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-center tracking-wide">
                   Quality and Tradition Since 1960. We offer a wide range of houseware products and expert repair services to keep your cherished items in perfect condition.
                 </p>
 
@@ -124,7 +124,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
                                 <CardTitle className="font-body font-semibold text-lg mt-4">{service.name}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                <p className="text-muted-foreground">{service.description}</p>
+                                <p className="text-muted-foreground tracking-wide">{service.description}</p>
                                 </CardContent>
                             </Card>
                             ))}
@@ -140,7 +140,7 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
           <a href="https://shop.usha1960.trade/" target="_blank" rel="noopener noreferrer" aria-label="UshaApp Website" className="logo-container">
             <UshaAppLogo />
           </a>
-          <p>&copy; {new Date().getFullYear()} ushªOªpp Housewares. All Rights Reserved.</p>
+          <p className="tracking-wide">&copy; {new Date().getFullYear()} ushªOªpp Housewares. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
