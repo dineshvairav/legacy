@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Icon, IconName } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { UshaAppLogo } from "@/components/logo";
+import Image from "next/image";
 
 type Product = { name: string; icon: IconName };
 type Service = { name: string; description: string, icon: IconName };
@@ -27,8 +28,14 @@ export function HomePage({ imageUrl, products, services, contact }: HomePageProp
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4 sm:gap-0">
-          <div className="flex flex-col text-center sm:text-left">
-            <h1 className="font-headline text-3xl font-bold text-foreground">
+          <div className="flex flex-col text-center sm:text-left">        
+              <Image
+                src="/logo.png"
+                alt="ushªOªpp Logo"
+                width={150}
+                height={50}
+              />          
+            <h1 className="text-2xl font-headline text-primary tracking-wide">
               ushªOªpp
             </h1>
             <p className="text-sm font-body text-muted-foreground tracking-wide">
